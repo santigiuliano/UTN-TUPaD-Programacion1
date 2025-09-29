@@ -1,9 +1,0 @@
-#Ejercicio2
-try:
-    nota = float(input("Ingresá tu nota (0 a 10): "))
-    if nota >= 6:
-        print ("Aprobado")
-    else:
-        print ("Desaprobado")
-except ValueError:
-    print("Entrada inválida: escribí un numero (podes usar decimales).")
