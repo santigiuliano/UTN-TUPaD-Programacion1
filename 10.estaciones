@@ -1,0 +1,32 @@
+def estacion_en_fecha(dia, mes, hemisferio):
+    if (mes == 12 and dia >= 21) or (1 <= mes <= 2) or (mes == 3 and dia <= 20):
+        # Invierno en norte, verano en sur
+        return "Invierno" if hemisferio == "N" else "Verano"
+
+    elif (mes == 3 and dia >= 21) or (4 <= mes <= 5) or (mes == 6 and dia <= 20):
+        # Primavera en norte, otoño en sur
+        return "Primavera" if hemisferio == "N" else "Otoño"
+
+    elif (mes == 6 and dia >= 21) or (7 <= mes <= 8) or (mes == 9 and dia <= 20):
+        # Verano en norte, invierno en sur
+        return "Verano" if hemisferio == "N" else "Invierno"
+
+    elif (mes == 9 and dia >= 21) or (10 <= mes <= 11) or (mes == 12 and dia <= 20):
+        # Otoño en norte, primavera en sur
+        return "Otoño" if hemisferio == "N" else "Primavera"
+
+    return "Fecha inválida"
+
+try:
+    hemisferio = input("Ingresá hemisferio (N para norte / S para sur): ").strip().upper()
+    mes = int(input("Ingresá el número de mes (1-12): "))
+    dia = int(input("Ingresá el día (1-31): "))
+
+    if hemisferio not in ["N", "S"]:
+        print("Hemisferio inválido. Debe ser N o S.")
+    else:
+        estacion = estacion_en_fecha(dia, mes, hemisferio)
+        print(f"En el hemisferio {hemisferio}, el {dia}/{mes} corresponde a: {estacion}")
+
+except ValueError:
+    print("Entrada inválida: asegurate de ingresar números enteros para mes y día.")

@@ -1,0 +1,17 @@
+nombre=input("Ingrese su nombre")
+print("OPCIONES:")
+print("1. Convertir a mayusculas")
+print("2. Convertir a minusculas")
+print("3. Convertir a titulo (primer letra en mayusculas)")
+try:
+    opcion=input("Ingrese el numero de la opcion")
+    if opcion==1:
+        print("Resultado:", nombre.upper())
+    elif opcion==2:
+        print("resultado: ", nombre.lower())
+    elif opcion==3:
+        print("Resultado:", nombre.title())
+    else:
+        print("Opcion invalida")
+except ValueError:
+    print("Entrada invalida: debe ingresar un numero (1, 2 o 3).")
